@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './App.css';
+
+import './app.scss';
 
 const App = () => (
-    <div className={styles.app}>
+    <div className="app">
         <h2>Hello, Webpack!</h2>
     </div>
 );

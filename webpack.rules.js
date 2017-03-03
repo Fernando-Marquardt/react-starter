@@ -5,8 +5,7 @@ module.exports = [
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-    },
-    {
+    }, {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
@@ -14,23 +13,56 @@ module.exports = [
             {
                 loader: 'css-loader',
                 options: {
-                    modules: true,
-                    localIdentName: '[local]__[name]___[hash:base64:5]',
-                    sourceMap: true
+                    modules: false,
+                    sourceMap: true,
+                    import: true
                 }
             },
             'postcss-loader'
         ]
-        /*use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: {
+    }, {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+            'style-loader',
+            {
                 loader: 'css-loader',
                 options: {
-                    modules: true,
-                    localIdentName: '[local]__[name]___[hash:base64:5]',
-                    sourceMap: true
+                    modules: false,
+                    sourceMap: true,
+                    import: true
                 }
-            }
-        })*/ // Add for production later
-    }
+            },
+            'sass-loader',
+            'postcss-loader'
+        ]
+    }, {
+		test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+		exclude: /node_modules/,
+		use: 'file-loader'
+	}, {
+		test: /\.(woff|woff2)$/,
+		exclude: /node_modules/,
+		use: 'url-loader?prefix=font/&limit=5000'
+	}, {
+		test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+		exclude: /node_modules/,
+		use: 'url-loader?limit=10000&mimetype=application/octet-stream'
+	}, {
+		test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+		exclude: /node_modules/,
+		use: 'url-loader?limit=10000&mimetype=image/svg+xml'
+	}, {
+		test: /\.gif/,
+		exclude: /node_modules/,
+		use: 'url-loader?limit=10000&mimetype=image/gif'
+	}, {
+		test: /\.jpg/,
+		exclude: /node_modules/,
+		use: 'url-loader?limit=10000&mimetype=image/jpg'
+	}, {
+		test: /\.png/,
+		exclude: /node_modules/,
+		use: 'url-loader?limit=10000&mimetype=image/png'
+	}
 ];
