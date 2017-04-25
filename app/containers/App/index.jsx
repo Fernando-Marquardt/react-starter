@@ -1,11 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import './app.scss';
+import Hello from '../Hello';
+import Another from '../Another';
 
 const App = () => (
-    <div className="app">
-        <h2>Hello, Webpack!</h2>
-    </div>
+    <Router>
+        <div className="app">
+            <ul>
+                <li><Link to="/">Hello</Link></li>
+                <li><Link to="/another">Another View</Link></li>
+            </ul>
+
+            <Route exact path="/" component={Hello} />
+            <Route exact path="/another" component={Another} />
+        </div>
+    </Router>
 );
 
 export default App;

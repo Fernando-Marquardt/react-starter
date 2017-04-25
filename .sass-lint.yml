@@ -1,0 +1,7 @@
+files:
+  include: 'app/**/*.s+(a|c)ss'
+rules:
+  indentation:
+    - 4
+    -
+      size: 4
