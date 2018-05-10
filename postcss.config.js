@@ -1,16 +1,16 @@
+/* eslint-env node */
 const AUTOPREFIXER_BROWSERS = [
-  'Android 2.3',
-  'Android >= 4',
-  'Chrome >= 35',
-  'Firefox >= 31',
-  'Explorer >= 9',
-  'iOS >= 7',
-  'Opera >= 12',
-  'Safari >= 7.1',
+  'Android >= 6',
+  'Chrome >= 50',
+  'Firefox >= 46',
+  'Explorer >= 11',
+  'iOS >= 9.3',
+  'Opera >= 37',
+  'Safari >= 9.1',
 ];
 
 module.exports = {
-	plugins: [
-		require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS })
-	]
-}
+  plugins: [
+    require('autoprefixer')({ browsers: AUTOPREFIXER_BROWSERS })
+  ]
+};
